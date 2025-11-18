@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="manifest" href="/manifest.json" />
+<title>DEM Ellipses – WebGL2</title>
+<style>
+html,body { margin:0; height:100%; background:#0b0f12; color:#e8f0f7; font-family: ui-sans-serif, system-ui; }
+#topbar { position:fixed; inset:8px auto auto 8px; display:flex; gap:8px; align-items:center; z-index:10; }
+#toolbar { position:fixed; inset:52px auto auto 8px; display:flex; gap:6px; flex-wrap:wrap; z-index:10; }
+.btn { background:#1b4f72; color:#fff; border:none; padding:8px 10px; border-radius:10px; font-weight:600; }
+.btn:active { transform: translateY(1px); }
+#controls { position:fixed; inset:92px auto auto 8px; background:#10161bcc; border:1px solid #1e2a33; border-radius:12px; padding:8px 10px; backdrop-filter: blur(6px); z-index:10; }
+#controls label { display:flex; align-items:center; gap:8px; font-size:12px; margin:6px 0; }
+#controls input[type=range] { width: 160px; }
+#controls input[type=color] { width: 28px; height: 22px; padding:0; border:none; background:transparent; }
+canvas { display:block; width:100vw; height:100vh; touch-action:none; }
+#overlay { position:fixed; inset:0; pointer-events:none; }
+.small { font-size: 11px; opacity: 0.8; }
+</style>
+<script type="module" crossorigin src="/assets/index-ZOYvU5_c.js"></script>
+
+<body>
+<div id="topbar">
+<button class="btn" id="btn-reset">Reset</button>
+<div class="btn-group">
+<button class="btn spawn" data-n="10">Spawn×10</button>
+<button class="btn spawn" data-n="20">×20</button>
+<button class="btn spawn" data-n="50">×50</button>
+<button class="btn spawn" data-n="100">×100</button>
+</div>
+<span class="small" id="hint">tap to spawn • drag to throw • pinch to zoom</span>
+</div>
+<div id="toolbar">
+<button class="btn" data-tool="gen">Generator</button>
+<button class="btn" data-tool="hand">Hand</button>
+<button class="btn" data-tool="shovel">Shovel</button>
+<button class="btn" data-tool="pen-line">Pen (line)</button>
+<button class="btn" data-tool="pen-rect">Rect</button>
+<button class="btn" data-tool="pen-circle">Circle</button>
+<button class="btn" data-tool="pen-tri">Triangle</button>
+</div>
+<div id="controls"></div>
+<canvas id="gl"></canvas>
+<canvas id="overlay"></canvas>
+</body>
+</html>
