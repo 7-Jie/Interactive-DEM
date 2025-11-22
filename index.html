@@ -18,11 +18,14 @@ canvas { display:block; width:100vw; height:100vh; touch-action:none; }
 #overlay { position:fixed; inset:0; pointer-events:none; }
 .small { font-size: 11px; opacity: 0.8; }
 </style>
-<script type="module" crossorigin src="/Interactive-DEM/assets/index-xQ-fKl41.js"></script>
+<script type="module" crossorigin src="/Interactive-DEM/assets/index-CFFoiDgZ.js"></script>
 
 <body>
 <div id="topbar">
-<button class="btn" id="btn-reset">Reset</button>
+
+<button class="btn" id="btn-reset-particles">Reset Particles</button>
+<button class="btn" id="btn-reset-walls">Reset Walls</button>
+
 <div class="btn-group">
 <button class="btn spawn" data-n="10">Spawn×10</button>
 <button class="btn spawn" data-n="20">×20</button>
@@ -39,6 +42,8 @@ canvas { display:block; width:100vw; height:100vh; touch-action:none; }
 <button class="btn" data-tool="pen-rect">Rect</button>
 <button class="btn" data-tool="pen-circle">Circle</button>
 <button class="btn" data-tool="pen-tri">Triangle</button>
+<!-- NEW -->
+<button class="btn" data-tool="del-wall">Delete wall</button>
 </div>
 <div id="controls"></div>
 <canvas id="gl"></canvas>
